@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { products } from '../mock-data/products'
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsComponent implements OnInit {
 
-  constructor() { }
+  products: any;
 
   ngOnInit(): void {
+    this.products = products;
+  }
+
+  share() {
+    window.alert('The product has been shared!');
   }
 
 }
